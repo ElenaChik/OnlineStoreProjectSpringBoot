@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/mySpringbootlearn
+    username: jpauser
+    password: 1111
+    driverClassName: org.postgresql.Driver
+    # hikari DataSource configuration
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: HikariCorePool
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      #connection-test-query: select * from information_schema.tables limit 1
